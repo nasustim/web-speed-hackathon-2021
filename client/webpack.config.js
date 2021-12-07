@@ -49,7 +49,7 @@ const config = {
     ],
   },
   output: {
-    filename: 'scripts/[name].js',
+    filename: 'scripts/[name].[hash].js',
     path: DIST_PATH,
   },
   plugins: [
@@ -65,10 +65,9 @@ const config = {
       COMMIT_HASH: process.env.SOURCE_VERSION || '',
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
+      filename: 'styles/[name].[hash].css',
     }),
     new HtmlWebpackPlugin({
-      inject: false,
       template: path.resolve(SRC_PATH, './index.html'),
     }),
   ],
