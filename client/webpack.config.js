@@ -84,7 +84,9 @@ const config = {
     minimize: true,
     minimizer: [
       new OptimizeCssAssetPlugin(),
-      new TerserPlugin(),
+      new TerserPlugin({
+        extractComments: true,
+      }),
     ]
   }
 };
