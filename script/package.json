@@ -1,0 +1,11 @@
+{
+  "name": "@web-speed-hackathon-2021/script",
+  "version": "0.0.1",
+  "main": "none",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "glob": "^7.2.0",
+    "sharp": "^0.29.3"
+  }
+}
