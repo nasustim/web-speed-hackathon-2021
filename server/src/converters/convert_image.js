@@ -9,14 +9,11 @@ import sharp from 'sharp';
  * @returns {Promise<Uint8Array>}
  */
 async function convertImage(buffer, options) {
-  const size = options.height === undefined && options.width === undefined
-    ? { height: 300 }
-    : { height: options.height, width: options.width }
-
   return sharp(buffer)
     .resize({
       fit: 'cover',
-      ...size,
+      height: options.height,
+      width: options.width,
     })
     .toFormat(options.extension ?? 'jpeg')
     .toBuffer();
