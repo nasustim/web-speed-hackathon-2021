@@ -4,6 +4,10 @@
   "main": "none",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "echo noop",
+    "start": "echo noop"
+  },
   "dependencies": {
     "glob": "^7.2.0",
     "sharp": "^0.29.3"
