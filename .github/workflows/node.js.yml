@@ -34,6 +34,7 @@ jobs:
         path: |
           node_modules
           client/*/node_modules
+          script/*/node_modules
           server/*/node_modules
         key: node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
@@ -46,6 +47,7 @@ jobs:
         path: |
           node_modules
           client/*/node_modules
+          script/*/node_modules
           server/*/node_modules
         key: node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
