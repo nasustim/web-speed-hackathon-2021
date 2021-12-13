@@ -22,7 +22,8 @@ const config = {
     },
     static: [PUBLIC_PATH, UPLOAD_PATH],
   },
-  devtool: 'inline-source-map',
+  devtool: process.env.NODE_ENV === 'development',
+  mode: process.env.NODE_ENV, 
   entry: {
     main: [
       'core-js',
@@ -62,6 +63,7 @@ const config = {
       'window.jQuery': 'jquery',
     }),
     new webpack.EnvironmentPlugin({
+      NODE_ENV: process.env.NODE_ENV,
       BUILD_DATE: new Date().toISOString(),
       // Heroku では SOURCE_VERSION 環境変数から commit hash を参照できます
       COMMIT_HASH: process.env.SOURCE_VERSION || '',
