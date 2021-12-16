@@ -13,7 +13,7 @@ glob('public/images/**/*.jpg', {
       .webp({
         nearLossless: true
       })
-      .resize(350, 350, {
+      .resize(500, 500, {
         fit: 'outside'
       })
       .toBuffer()
