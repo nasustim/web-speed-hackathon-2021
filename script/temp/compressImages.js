@@ -10,9 +10,14 @@ glob('public/images/**/*.jpg', {
   files.forEach(async (file) => {
     const _file = path.resolve(__dirname, '../../', file)
     const buf = await sharp(_file)
-      .resize(710)
+      .webp({
+        nearLossless: true
+      })
+      .resize(500, 500, {
+        fit: 'contain'
+      })
       .toBuffer()
     
-    sharp(buf).toFile(_file)
+    sharp(buf).toFile(_file.replace('\.jpg', '\.webp'))
   })
 })
