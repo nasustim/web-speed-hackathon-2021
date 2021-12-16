@@ -53,6 +53,7 @@ const config = {
   },
   output: {
     filename: 'scripts/[name].[hash].js',
+    publicPath: '/',
     path: DIST_PATH,
   },
   plugins: [
