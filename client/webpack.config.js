@@ -52,7 +52,7 @@ const config = {
     ],
   },
   output: {
-    filename: 'scripts/[name].[hash].js',
+    filename: 'scripts/[name].[contenthash].js',
     publicPath: '/',
     path: DIST_PATH,
   },
@@ -70,7 +70,7 @@ const config = {
       COMMIT_HASH: process.env.SOURCE_VERSION || '',
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[hash].css',
+      filename: 'styles/[name].[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(SRC_PATH, './index.html'),
