@@ -1,8 +1,9 @@
-import moment from 'moment';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { getProfileImagePath } from '../../../utils/get_path';
+
+import { toISOString, toLLString } from '../../../utils/datetime'
 
 /**
  * @typedef {object} Props
@@ -33,8 +34,8 @@ const CommentItem = ({ comment }) => {
           </p>
           <p className="text-gray-800 text-sm leading-relaxed">{comment.text}</p>
           <p className="text-gray-500 text-xs">
-            <time dateTime={moment(comment.createdAt).toISOString()}>
-              {moment(comment.createdAt).locale('ja').format('LL')}
+            <time dateTime={toISOString(comment.createdAt)}>
+              {toLLString(comment.createdAt)}
             </time>
           </p>
         </div>
