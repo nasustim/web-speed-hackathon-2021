@@ -40,14 +40,13 @@ const PausableMovie = ({ src }) => {
       animator.onFrame(frames[0]);
 
       // 視覚効果 off のとき GIF を自動再生しない
-      /** デフォルトで自動再生をOFFにする */
-      //if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      //  setIsPlaying(false);
-      //  animator.stop();
-      //} else {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        setIsPlaying(false);
+        animator.stop();
+      } else {
         setIsPlaying(true);
         animator.start();
-      //}
+      }
 
       animatorRef.current = animator;
     },
